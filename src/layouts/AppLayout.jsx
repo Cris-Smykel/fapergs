@@ -6,7 +6,9 @@ export default function AppLayout() {
     <div>
       <Header />
 
-      <Outlet />
+      <div className="mt-20">
+        <Outlet />
+      </div>
     </div>
   );
 }
