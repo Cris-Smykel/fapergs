@@ -1,9 +1,12 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import heroImage from "../../assets/images/hero.png";
 
 export default function Hero() {
+  const inicioRef = useRef(null);
+
   return (
-    <section className="bg-regular-gradient">
+    <section className="bg-regular-gradient" id="inicio" ref={inicioRef}>
       <div className="text-white font-bold p-3 py-16 flex flex-col gap-10 md:flex-row md:gap-16 md:p-4 md:py-28 md:items-center regular-max-w m-auto">
         <article className="flex flex-col gap-7">
           <h1 className="text-2xl max-w-[40ch] lg:text-4xl lg:max-w-[30ch]">

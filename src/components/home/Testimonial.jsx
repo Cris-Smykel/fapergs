@@ -18,7 +18,7 @@ export default function Testimonial() {
   });
 
   return (
-    <section className="bg-regular-gradient">
+    <section className="bg-regular-gradient" id="testimonial">
       <div className="p-3 py-16 flex flex-col items-center gap-12 md:p-4 md:py-20 max-w-7xl m-auto lg:gap-16">
         <article className="text-white font-base text-center flex flex-col items-center gap-4">
           <h2 className="text-2xl lg:text-4xl font-bold md:text-nowrap">

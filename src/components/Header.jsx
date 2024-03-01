@@ -1,12 +1,36 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
 import logo from "../assets/logos/logo.png";
 
 export default function Header() {
   const [isHeaderActive, setIsHeaderActive] = useState(() => false);
 
+  const [searchParams] = useSearchParams();
+  const view = searchParams.get("view");
+  const headerRef = useRef(null);
+  const viewRef = useRef(null);
+
+  useEffect(() => {
+    if (view) {
+      viewRef.current = document.getElementById(view);
+
+      if (viewRef.current) {
+        const headerHeight = headerRef.current.clientHeight;
+        const scrollPosition = viewRef.current.offsetTop - headerHeight;
+
+        window.scrollTo({
+          top: scrollPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [searchParams]);
+
   return (
-    <header className="bg-white fixed top-0 right-0 left-0 z-10 border-b border-customTransparent-2">
+    <header
+      ref={headerRef}
+      className="bg-white fixed top-0 right-0 left-0 z-10 border-b border-customTransparent-2"
+    >
       <div className="p-3 py-6 sm:p-5 sm:py-6 flex items-center justify-between gap-4 regular-max-w m-auto">
         <Link to="/">
           <picture>
@@ -22,7 +46,7 @@ export default function Header() {
         <div
           className={`${
             isHeaderActive ? "top-0" : "-top-[110vh]"
-          } fixed z-20 h-screen left-0 right-0 bg-customTransparent-5 transition-all duration-300 md:static md:h-[initial] md:bg-white`}
+          } fixed z-20 h-screen left-0 right-0 bg-customTransparent-7 transition-all duration-300 md:static md:h-[initial] md:bg-white`}
         >
           <div className="flex items-center justify-center h-full max-w-96 relative m-auto md:m-[initial] md:h-[initial] md:max-w-[initial]">
             <i
@@ -33,24 +57,44 @@ export default function Header() {
             <nav>
               <ul className="text-white text-lg font-bold flex flex-col items-center gap-10 md:text-customBlack-4 md:flex-row md:gap-16">
                 <li>
-                  <a className="hover:text-primary regular-transition" href="#">
+                  <Link
+                    to={`/?view=${"inicio"}`}
+                    className={`${
+                      view === "inicio" && "text-primary"
+                    } hover:text-primary regular-transition`}
+                  >
                     Início
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="hover:text-primary regular-transition" href="#">
+                  <Link
+                    to={`/?view=${"sobre"}`}
+                    className={`${
+                      view === "sobre" && "text-primary"
+                    } hover:text-primary regular-transition`}
+                  >
                     Sobre
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="hover:text-primary regular-transition" href="#">
+                  <Link
+                    to={`/?view=${"testimonial"}`}
+                    className={`${
+                      view === "testimonial" && "text-primary"
+                    } hover:text-primary regular-transition`}
+                  >
                     Testimonial
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a className="hover:text-primary regular-transition" href="#">
+                  <Link
+                    to={`/?view=${"faqs"}`}
+                    className={`${
+                      view === "faqs" && "text-primary"
+                    } hover:text-primary regular-transition`}
+                  >
                     FAQs
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
