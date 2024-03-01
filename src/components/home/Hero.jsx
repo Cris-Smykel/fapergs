@@ -24,9 +24,9 @@ export default function Hero() {
             <Link to="inscrever-se" className="button">
               Inscrever-se
             </Link>
-            <a href="#" className="button">
+            <Link to="saber-mais" className="button">
               Saber mais
-            </a>
+            </Link>
           </div>
         </article>
 

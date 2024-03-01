@@ -12,9 +12,9 @@ export default function Header(props) {
 
   const viewsRef = props.viewsRef;
 
-  const location = useLocation().pathname;
+  const location = useLocation();
   const [headerAnchorsData, setHeaderAnchorsData] = useState(() =>
-    getHeaderAnchorsData(location)
+    getHeaderAnchorsData(location.pathname)
   );
 
   const headerAnchors = headerAnchorsData.map((anchorData) => {
@@ -32,7 +32,7 @@ export default function Header(props) {
   });
 
   useEffect(() => {
-    if (location !== "/") {
+    if (location.pathname !== "/" && location.search !== "") {
       setHeaderAnchorsData(() => getHeaderAnchorsData(location));
     }
 
@@ -49,7 +49,7 @@ export default function Header(props) {
         faqsOffsetTop: viewsRef.faqs.current.offsetTop - headerHeight,
       };
 
-      window.addEventListener("scroll", () => {
+      function handleScrollEvent() {
         const currentYPosition = window.scrollY;
 
         if (
@@ -118,7 +118,9 @@ export default function Header(props) {
             return newAnchorsData;
           });
         }
-      });
+      }
+
+      window.addEventListener("scroll", handleScrollEvent);
     }
   }, [view]);
 
