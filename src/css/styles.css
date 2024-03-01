@@ -3,3 +3,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .regular-transition {
+    @apply transition-all duration-200;
+  }
+
+  .regular-max-w {
+    @apply max-w-7xl;
+  }
+
+  .button {
+    @apply w-44 py-2 text-base sm:text-lg font-bold bg-primary regular-transition hover:bg-[rgb(69,145,117)] text-white text-center rounded-2xl;
+  }
+}
+
+.bg-regular-gradient {
+  background: rgb(120, 42, 179);
+  background: linear-gradient(
+    180deg,
+    rgba(120, 42, 179, 1) 15%,
+    rgba(52, 18, 77, 1) 69%
+  );
+}
