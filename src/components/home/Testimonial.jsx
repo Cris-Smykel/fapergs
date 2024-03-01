@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import profile1 from "../../assets/images/profile-1.png";
 import profile2 from "../../assets/images/profile-2.png";
 import profile3 from "../../assets/images/profile-3.png";
@@ -17,8 +17,14 @@ export default function Testimonial() {
     );
   });
 
+  const testimonialRef = useOutletContext().testimonial;
+
   return (
-    <section className="bg-regular-gradient" id="testimonial">
+    <section
+      className="bg-regular-gradient"
+      id="testimonial"
+      ref={testimonialRef}
+    >
       <div className="p-3 py-16 flex flex-col items-center gap-12 md:p-4 md:py-20 max-w-7xl m-auto lg:gap-16">
         <article className="text-white font-base text-center flex flex-col items-center gap-4">
           <h2 className="text-2xl lg:text-4xl font-bold md:text-nowrap">

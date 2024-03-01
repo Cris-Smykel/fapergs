@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import { useState } from "react";
 
 export default function Faqs() {
@@ -17,8 +17,10 @@ export default function Faqs() {
     );
   });
 
+  const faqsRef = useOutletContext().faqs;
+
   return (
-    <section id="faqs">
+    <section id="faqs" ref={faqsRef}>
       <div className="p-3 py-16 sm:p-4 sm:py-20 flex flex-col gap-10 lg:gap-16 md:flex-row m-auto max-w-7xl md:justify-between">
         <article className="flex flex-col gap-4 md:gap-6 md:py-16">
           <h2 className="text-primary font-bold text-2xl lg:text-4xl lg:text-nowrap">

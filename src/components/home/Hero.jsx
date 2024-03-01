@@ -1,9 +1,9 @@
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 import heroImage from "../../assets/images/hero.png";
+import { useOutletContext } from "react-router-dom";
 
 export default function Hero() {
-  const inicioRef = useRef(null);
+  const inicioRef = useOutletContext().inicio;
 
   return (
     <section className="bg-regular-gradient" id="inicio" ref={inicioRef}>

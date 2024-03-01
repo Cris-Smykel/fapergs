@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import aboutImage from "../../assets/images/about.png";
 
 export default function About() {
+  const sobreRef = useOutletContext().sobre;
+
   return (
-    <section className="bg-white" id="sobre">
+    <section className="bg-white" id="sobre" ref={sobreRef}>
       <div className="p-3 py-10 flex flex-col gap-10 md:flex-row-reverse md:gap-16 md:p4 md:py-16 max-w-7xl md:justify-between md:items-center m-auto lg:py-20">
         <article className="text-base text-customBlack-3 font-normal flex flex-col gap-4 md:gap-6">
           <h2 className="text-2xl lg:text-4xl text-primary font-bold md:text-nowrap">
