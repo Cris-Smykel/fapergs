@@ -13,6 +13,7 @@ module.exports = {
           1: "#111111",
         },
         customTransparent: {
+          1: "rgba(0,0,0,.1)",
           2: "rgba(0,0,0,.2)",
           5: "rgba(0,0,0,.5)",
         },
