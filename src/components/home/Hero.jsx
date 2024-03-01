@@ -6,11 +6,11 @@ export default function Hero() {
     <section className="bg-regular-gradient">
       <div className="text-white font-bold p-3 py-16 flex flex-col gap-10 md:flex-row md:gap-16 md:p-4 md:py-28 md:items-center regular-max-w m-auto">
         <article className="flex flex-col gap-7">
-          <h1 className="text-2xl max-w-[26ch] lg:text-4xl lg:max-w-[30ch]">
+          <h1 className="text-2xl max-w-[40ch] lg:text-4xl lg:max-w-[30ch]">
             Bem-vindo à Conferência Estadual de Ciência, Tecnologia e Inovação!
           </h1>
 
-          <p className="font-normal text-base max-w-[52ch]">
+          <p className="font-normal text-base md:max-w-[52ch]">
             Descubra o futuro da pesquisa e inovação enquanto reunimos
             especialistas, acadêmicos e inovadores sob o mesmo teto. Junte-se a
             nós enquanto exploramos avanços inovadores e traçamos o curso para

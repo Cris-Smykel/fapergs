@@ -11,20 +11,20 @@ export default function About() {
           </h2>
 
           <article className="text-inherit flex flex-col gap-2">
-            <p className="max-w-[55ch]">
+            <p className="md:max-w-[55ch]">
               A Conferência Estadual de Ciência, Tecnologia e Inovação é uma
               plataforma líder dedicada a promover a colaboração e impulsionar o
               progresso nos campos da ciência, tecnologia e inovação.
             </p>
 
-            <p className="max-w-[55ch]">
+            <p className="md:max-w-[55ch]">
               Nossa conferência serve como um ponto de encontro para
               pesquisadores, formuladores de políticas, líderes da indústria e
               acadêmicos trocarem ideias, apresentarem pesquisas de ponta e
               forjarem parcerias que impulsionam a inovação.
             </p>
 
-            <p className="max-w-[55ch]">
+            <p className="md:max-w-[55ch]">
               Desde explorar as últimas tendências até abordar desafios
               urgentes, estamos comprometidos em avançar o conhecimento e
               catalisar mudanças transformadoras.
