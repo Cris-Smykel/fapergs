@@ -38,5 +38,6 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1"
-  }
+  },
+  "homepage": "https://fapergs.crissmykel.com"
 }
